@@ -6,9 +6,9 @@ import GameContainer from "./components/GameContainer";
 
 export default function App() {
   const [data, setData] = useState({
-    playerOne: "X",
-    playerTwo: "O",
-    dimension: "3"
+    playerOne: "",
+    playerTwo: "",
+    dimension: ""
   });
 
   function handleUpdate(event) {
