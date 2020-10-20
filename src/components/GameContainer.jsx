@@ -204,7 +204,7 @@ export default function GameContainer(props) {
                   </div>
                 </div>
               ) : (
-                "Next Player: " + (whoseTurn % 2 === 0 ? "X" : "O")
+                "Next Player: " + (whoseTurn % 2 === 0 ? playerOne : playerTwo)
               )}
             </div>
           </small>
