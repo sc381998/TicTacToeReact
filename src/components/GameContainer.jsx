@@ -16,38 +16,7 @@ export default function GameContainer(props) {
     gridGap: "10px",
     marginTop: "50px"
   };
-  const winnerCombination = function () {
-    let winnerCombinations = [];
-    //all combination in row
-    for (let i = 0; i < dimension; i++) {
-      let temp = [];
-      for (let j = 0; j < dimension; j++) {
-        temp.push(i.toString() + j.toString());
-      }
-      winnerCombinations.push(temp);
-    }
-    //all combinations in column
-    for (let i = 0; i < dimension; i++) {
-      let temp = [];
-      for (let j = 0; j < dimension; j++) {
-        temp.push(winnerCombinations[j][i]);
-      }
-      winnerCombinations.push(temp);
-    }
-    //all combination in diagonal
-    let diagonal1 = [];
-    let diagonal2 = [];
-    for (let i = 0; i < dimension; i++) {
-      for (let j = 0; j < dimension; j++) {
-        if (i === j) diagonal1.push(i.toString() + j.toString());
-        if (i + j === dimension - 1)
-          diagonal2.push(i.toString() + j.toString());
-      }
-    }
-    winnerCombinations.push(diagonal1);
-    winnerCombinations.push(diagonal2);
-    console.log(winnerCombinations);
-  };
+
   const calculateWinner = (board) => {
     if (dimension === "3") {
       let winnerCombinations = [
@@ -192,7 +161,7 @@ export default function GameContainer(props) {
               {calculateWinner(board) ? (
                 <div>
                   <div className="winner">
-                    {"Winner: " + (whoseTurn % 2 === 0 ? playerOne : playerTwo)}
+                    {"Winner: " + (whoseTurn % 2 !== 0 ? playerOne : playerTwo)}
                   </div>
                   <div className="space-around row" id="restart">
                     <div className="restart" onClick={replayGame}>

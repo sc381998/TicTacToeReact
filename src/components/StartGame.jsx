@@ -39,6 +39,7 @@ export default function StartGame(props) {
             id="dimension"
             name="dimension"
             // value={data.dimension}
+            placeholder="Select the dimension"
             className="form-control"
             value={data.dimension}
             onChange={handleUpdate}
