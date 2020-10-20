@@ -4,8 +4,8 @@ import Cell from "./Cell";
 export default function GameContainer(props) {
   const { playerOne, playerTwo, dimension } = props.data;
   const [gameOver, setGameOver] = useState(false);
-  const totalDim = dimension * dimension;
-  const [board, setBoard] = useState(Array(totalDim).fill(null));
+  const totalDimension = dimension * dimension;
+  const [board, setBoard] = useState(Array(totalDimension).fill(null));
   const [whoseTurn, setwhoseTurn] = useState(1);
 
   const customStyle = {
@@ -142,7 +142,7 @@ export default function GameContainer(props) {
   const replayGame = () => {
     setGameOver(!gameOver);
     setwhoseTurn(1);
-    setBoard(Array(totalDim).fill(null));
+    setBoard(Array(totalDimension).fill(null));
   };
 
   const restartGame = () => {
