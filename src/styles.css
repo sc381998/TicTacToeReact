@@ -52,6 +52,7 @@ small {
   text-transform: uppercase;
 }
 .container0 .btn-sagar {
+  width: 150px;
   color: #fff;
   background: #0da192;
   display: flex;

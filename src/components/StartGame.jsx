@@ -21,28 +21,33 @@ export default function StartGame(props) {
           type="text"
           id="playerOne"
           name="playerOne"
-          value={data.playerOne}
+          // value={data.playerOne}
           onChange={handleUpdate}
         />
         <input
           className="form-control"
+          // value={data.playerTwo}
           placeholder="Enter 2nd player name"
           type="text"
           id="playerTwo"
           name="playerTwo"
-          value={data.playerTwo}
           onChange={handleUpdate}
         />
 
         <div className="form-group">
           <select
             id="dimension"
-            value={data.dimension.value}
             name="dimension"
+            // value={data.dimension}
             className="form-control"
+            value={data.dimension}
             onChange={handleUpdate}
           >
-            <option className="hide" value="" disabled={true}>
+            <option
+              className="hide"
+              value="Select the dimension"
+              disabled={true}
+            >
               Select the dimension
             </option>
             <option value="3">3</option>
