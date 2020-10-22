@@ -146,7 +146,7 @@ export default function GameContainer(props) {
   };
 
   const restartGame = () => {
-    window.location.reload();
+    props.history.push("/");
   };
   return (
     <>
@@ -158,10 +158,13 @@ export default function GameContainer(props) {
         <div className="text-center text-white mt-4">
           <small id="turn">
             <div>
-              {calculateWinner(board) ? (
+              {calculateWinner(board) || gameOver ? (
                 <div>
                   <div className="winner">
-                    {"Winner: " + (whoseTurn % 2 !== 0 ? playerOne : playerTwo)}
+                    {calculateWinner(board)
+                      ? "Winner: " +
+                        (whoseTurn % 2 !== 0 ? playerOne : playerTwo)
+                      : "Game Over"}
                   </div>
                   <div className="space-around row" id="restart">
                     <div className="restart" onClick={replayGame}>
